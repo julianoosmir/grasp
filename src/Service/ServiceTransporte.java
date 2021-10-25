@@ -4,7 +4,7 @@ import Product.Transporte;
 
 import java.util.List;
 
-public class ServiceTransporte implements TransportRepository {
+public class ServiceTransporte implements TransportCrud {
     @Override
     public void inserir(Transporte o) {
         this.banco.AdicinarTrasporte(o);

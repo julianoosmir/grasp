@@ -4,35 +4,36 @@ import java.util.UUID;
 
 public abstract class Transporte {
 
-    private UUID id = UUID.randomUUID();
-    public String tipo;
-    public Double tempoDeViagem;
-    public Double preco;
+    protected UUID id = UUID.randomUUID();
+    protected String tipo;
+    protected Double tempoDeViagem;
+    protected Double preco;
 
     public UUID getId() {
         return id;
     }
-     public String getTipo() {
-         return this.tipo;
-     }
 
-     public void setTipo(String tipo) {
-         this.tipo = tipo;
-     }
+    public String getTipo() {
+        return this.tipo;
+    }
 
-     public Double getTempoDeViagem() {
-         return this.tempoDeViagem;
-     }
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
 
-     public void setTempoDeViagem(Double tempoDeViagem) {
-         this.tempoDeViagem = tempoDeViagem;
-     }
+    public Double getTempoDeViagem() {
+        return this.tempoDeViagem;
+    }
 
-     public Double getPreco() {
-         return preco;
-     }
+    public void setTempoDeViagem(Double tempoDeViagem) {
+        this.tempoDeViagem = tempoDeViagem;
+    }
 
-     public void setPreco(Double preco) {
-         this.preco = preco;
-     }
- }
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+}
