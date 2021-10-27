@@ -29,9 +29,6 @@ public class App {
 
         Double valor = viagens.getTotal();
 
-        System.out.println(valor);
-
-
     }
 
     static Transporte inserirDados(){
@@ -56,7 +53,6 @@ public class App {
         }
         return  transporteFactory;
     }
-
     static int apenaNumeros(String mensagem) {
         Pattern p = Pattern.compile("[A-Z,a-z,&%$#@!()*^]");
         String input = JOptionPane.showInputDialog(mensagem);
