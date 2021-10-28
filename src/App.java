@@ -1,3 +1,7 @@
+import Banco.Banco;
+import ConcretProduct.Aviao;
+import ConcretProduct.Barco;
+import ConcretProduct.Onibus;
 import Controller.TransporteController;
 import CreateFactory.AviaoFactory;
 import CreateFactory.BarcoFactory;
@@ -15,8 +19,6 @@ public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
-
-
         TransporteController Controller = new TransporteController();
 
         Controller.inserir(inserirDados());
@@ -30,6 +32,33 @@ public class App {
         Double valor = viagens.getTotal();
 
     }
+
+    static Transporte contraExemploCreator(){
+
+        Onibus onibus = null;
+        Aviao aviao = null;
+        Barco barco = null;
+        int option = apenaNumeros("1 para onibus , 2 para barco e 3 para aviao");
+        if (option == 1) {
+            onibus = new Onibus(1.2, 2500.2);
+        }
+        if (option == 2) {
+            barco = new Barco(11.2, 45.2);
+        }
+        if (option == 3) {
+            aviao = new Aviao(23.3, 350.2);
+        }
+        if (barco != null){
+            return barco;
+        }
+        if (aviao != null){
+            return aviao;
+        }
+        if (onibus != null){
+            return onibus;
+        }
+        return  null;
+    };
 
     static Transporte inserirDados(){
         TransporteFactory transporteFactory = null;
@@ -53,6 +82,7 @@ public class App {
         }
         return  transporteFactory;
     }
+
     static int apenaNumeros(String mensagem) {
         Pattern p = Pattern.compile("[A-Z,a-z,&%$#@!()*^]");
         String input = JOptionPane.showInputDialog(mensagem);
