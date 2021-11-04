@@ -12,6 +12,7 @@ import Product.Viagens;
 
 import javax.swing.*;
 import java.util.List;
+import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -59,6 +60,22 @@ public class App {
         }
         return  null;
     };
+
+    static void contraExemplo(Banco banco, Transporte transporte){
+        List<Transporte> transportes = null;
+        int option = apenaNumeros("1 para listar , 2 para inserir e 3 para deletar");
+        if (option == 1) {
+          transportes = banco.getTransporteList();
+        }
+        if (option == 2) {
+           banco.AdicinarTrasporte(transporte);
+        }
+        if (option == 3) {
+            banco.RemoverTranporte(transporte.getId());
+        }
+
+    }
+
 
     static Transporte inserirDados(){
         TransporteFactory transporteFactory = null;
