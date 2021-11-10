@@ -75,6 +75,13 @@ public class App {
 
     }
 
+    static Double totalViagem(Viagens viagens){
+        Double total = 0.0;
+        for (Transporte transporte : viagens.getTransportes()){
+            total += transporte.getPreco();
+        }
+        return total;
+    }
 
     static Transporte inserirDados(){
         TransporteFactory transporteFactory = null;
